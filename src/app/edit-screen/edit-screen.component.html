@@ -1,0 +1,120 @@
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <div class="container overflow-hidden">
+        <h2>Edit Status Screen</h2>
+        <div class="row rowmargin mt-15">
+            <div class="col-sm 4">
+                <span class="row-heading h6">ID</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Applicant Name</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6"> Gender</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">District</span>
+            </div>
+
+        </div>
+
+
+        <div class="row mt-1">
+            <div class="col-sm 4"><span class="row-value">{{response.id}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.applicantName}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.gender}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.district}}</span></div>
+        </div>
+        <div class="row rowmargin mt-3">
+            <div class="col-sm 4">
+                <span class="row-heading h6">Date of Application</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Date of Approval</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6"> Modified Date</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Reviewer Id</span>
+            </div>
+
+        </div>
+        <div class="row mt-1">
+            <div class="col-sm 4"><span class="row-value">{{response.dateOfApplication}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.dateOfApproval}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.modifiedDate}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.reviewerId}}</span></div>
+        </div>
+        <div class="row rowmargin mt-3">
+            <div class="col-sm 4">
+                <span class="row-heading h6">Reviewer Name</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Reviewer Comments</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Pincode</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Ownership</span>
+            </div>
+
+        </div>
+
+        <div class="row mt-1">
+            <div class="col-sm 4"><span class="row-value">{{response.reviewerName}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.reviewerComents}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.pincode}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.ownership}}</span></div>
+        </div>
+        <div class="row rowmargin mt-3">
+            <div class="col-sm 4">
+                <span class="row-heading h6">State</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Category</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6"> Govt Id Type</span>
+            </div>
+            <div class="col-sm 4">
+                <span class="row-heading h6">Load Applied</span>
+            </div>
+
+        </div>
+      
+        <div class="row mt-1">
+            <div class="col-sm 4"><span class="row-value">{{response.state}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.category}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.govtIdType}}</span></div>
+            <div class="col-sm 4"><span class="row-value">{{response.loadApplied}}</span></div>>
+
+        </div>
+        <div class="row rowmargin mt-3">
+            <div class="col-sm 4">
+                <span class="row-heading h6">Status</span>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-sm 4">
+                <div class="row">
+                    <div class="col-sm 4 form-size" >
+                        <span class="row-value">
+                            <mat-form-field appearance="fill">
+                                <mat-label>{{response.status}}</mat-label>
+                                <mat-select [(value)]="this.status">
+                                    <mat-option *ngFor="let item of Status" [value]="item" (click)="editStatus()">
+                                        {{item}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="msg != null"class="alert alert-primary alert-dismissible fade show" role="alert" >
+            {{msg.message}}
+          </div>
+    </div>
+</main>
